@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
+import { MESSAGES } from "../Constant";
 import Button from "../components/Button";
 import CommonInput from "../components/Input";
 import MultilineText from "../components/TextArea";
 import { useTaskContext } from "../context/TaskContext";
-import { MESSAGES } from "../Constant";
 
 const AddEditTaskPage = () => {
   const { addTask, editTask, tasks } = useTaskContext();
@@ -75,7 +75,7 @@ const AddEditTaskPage = () => {
             required
           />
           <div className="flex items-center gap-4">
-            <Button type="submit">{id ? "Update Task" : "Add Task"}</Button>
+            <Button type="submit">{id ? "Update Task" : "Save Task"}</Button>
             <Button
               variant="secondary"
               onClick={() => navigate(-1)}
